@@ -87,5 +87,36 @@ fun FormInputSiswa(
     onValueChange: (DetailSiswa) -> Unit = {},
     enabled: Boolean = true
 ) {
+    Column(
+        modifier = modifier,
+        verticalArrangement = Arrangement.spacedBy(dimensionResource(id = R.dimen.padding_medium))
+    ) {
+        OutlinedTextField(
+            value = detailSiswa.nama,
+            onValueChange = { onValueChange(detailSiswa.copy(nama = it)) },
+            label = { Text(stringResource(id = R.string.nama)) },
+            modifier = Modifier.fillMaxWidth(),
+            enabled = enabled,
+            singleLine = true
+        )
+        OutlinedTextField(
+            value = detailSiswa.alamat,
+            onValueChange = { onValueChange(detailSiswa.copy(alamat = it)) },
+            label = { Text(stringResource(id = R.string.alamat)) },
+            modifier = Modifier.fillMaxWidth(),
+            enabled = enabled,
+            singleLine = true
+        )
+        OutlinedTextField(
+            value = detailSiswa.telpon,
+            onValueChange = { onValueChange(detailSiswa.copy(telpon = it)) },
+            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
+            label = { Text(stringResource(id = R.string.telpon)) },
+            modifier = Modifier.fillMaxWidth(),
+            enabled = enabled,
+            singleLine = true
+        )
 
+
+    }
 }
