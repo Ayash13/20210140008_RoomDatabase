@@ -27,6 +27,7 @@ import com.example.kotlin_repo.model.EntryViewModel
 import com.example.kotlin_repo.model.PenyediaViewModel
 import com.example.kotlin_repo.model.UIStateSiswa
 import com.example.kotlin_repo.navigasi.DestinasiNavigasi
+import com.example.kotlin_repo.navigasi.SiswaTopAppBar
 import kotlinx.coroutines.launch
 
 object DestinasiEntry : DestinasiNavigasi {
@@ -45,7 +46,13 @@ fun EntrySiswaScreen(
     val scrollBehavior = TopAppBarDefaults.enterAlwaysScrollBehavior()
     Scaffold(
         modifier = modifier.nestedScroll(scrollBehavior.nestedScrollConnection),
-
+        topBar = {
+            SiswaTopAppBar(
+                title = stringResource(DestinasiEntry.titleRes),
+                canNavigateBack = true,
+                scrollBehavior = scrollBehavior
+            )
+        }
     ) { innerPadding ->
         EntrySiswaBody(
             uiStateSiswa = viewModel.uiStateSiswa,
