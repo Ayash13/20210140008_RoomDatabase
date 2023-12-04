@@ -37,6 +37,7 @@ import com.example.kotlin_repo.data.Siswa
 import com.example.kotlin_repo.model.HomeViewModel
 import com.example.kotlin_repo.model.PenyediaViewModel
 import com.example.kotlin_repo.navigasi.DestinasiNavigasi
+import com.example.kotlin_repo.navigasi.SiswaTopAppBar
 
 object DestinasiHome : DestinasiNavigasi {
     override val route = "home"
@@ -54,7 +55,13 @@ fun HomeScreen(
 
     Scaffold(
         modifier = modifier.nestedScroll(scrollBehavior.nestedScrollConnection),
-
+        topBar = {
+            SiswaTopAppBar(
+                title = stringResource(DestinasiHome.titleRes),
+                canNavigateBack = false,
+                scrollBehavior = scrollBehavior
+            )
+        },
         floatingActionButton = {
             FloatingActionButton(
                 onClick = navigateToItemEntry,
