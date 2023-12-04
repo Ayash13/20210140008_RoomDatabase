@@ -21,6 +21,10 @@ import com.example.kotlin_repo.ui.theme.halaman.DestinasiHome
 import com.example.kotlin_repo.ui.theme.halaman.EntrySiswaScreen
 import com.example.kotlin_repo.ui.theme.halaman.HomeScreen
 
+@Composable
+fun SiswaApp(navController: NavHostController = rememberNavController()) {
+    HostNavigasi(navController = navController)
+}
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
